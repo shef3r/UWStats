@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using StatifyUWPLib;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,6 +24,7 @@ namespace Statify
     /// </summary>
     public sealed partial class InterfacePage : Page
     {
+        public string token;
         public InterfacePage()
         {
             this.InitializeComponent();
@@ -31,7 +34,22 @@ namespace Statify
         {
             base.OnNavigatedTo(e);
 
-            token.Text = (string)e.Parameter;
+            token = (string)e.Parameter;
+        }
+
+        private async void navview_Loaded(object sender, RoutedEventArgs e)
+        {
+            pfp.ProfilePicture = await Images.GetProfilePic();
+        }
+
+        private void navview_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+        {
+
+        }
+
+        private async void Logout(object sender, RoutedEventArgs e)
+        {
+            Auth.ClearCredentials();
         }
     }
 }

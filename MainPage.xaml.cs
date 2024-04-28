@@ -50,7 +50,7 @@ namespace Statify
                 {
                     CodeChallengeMethod = "S256",
                     CodeChallenge = challenge,
-                    Scope = new[] { Scopes.UserTopRead }
+                    Scope = new[] { Scopes.UserTopRead, Scopes.UserReadEmail, Scopes.UserReadPrivate }
                 };
                 var uri = loginRequest.ToUri();
                 this.Frame.Navigate(typeof(AuthWebPage), uri);

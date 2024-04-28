@@ -5,11 +5,30 @@
     xmlns:local="using:Statify"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
     <Grid>
-        <TextBlock>yuhh u here!!!</TextBlock>
-        <TextBlock x:Name="token"></TextBlock>
+        <NavigationView
+            x:Name="navview"
+            Loaded="navview_Loaded"
+            ItemInvoked="navview_ItemInvoked"
+            PaneDisplayMode="Top" IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Artists" Icon="People"/>
+                <NavigationViewItem Content="Tracks" Icon="MusicInfo"/>
+            </NavigationView.MenuItems>
+            <NavigationView.PaneFooter>
+                <Button Margin="0,0,10,0" Background="Transparent" BorderThickness="0">
+                    <PersonPicture x:Name="pfp" Initials="U" Width="36" BorderThickness="0"/>
+                    <Button.Flyout>
+                        <MenuFlyout>
+                            <MenuFlyoutItem Text="Log out" Click="Logout" Name="logout" Icon="Delete"/>
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </NavigationView.PaneFooter>
+        </NavigationView>
     </Grid>
 </Page>
