@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StatifyUWPLib;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,33 +14,37 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace Statify
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class EntryPage : Page
     {
         public EntryPage()
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
             string nav = (string)e.Parameter;
-            string wiad = "";
-            if (nav.StartsWith("a")) { wiad += "artists"; }
-            else if (nav.StartsWith("t")) { wiad += "tracks"; }
-            wiad += ", ";
-            if (nav.EndsWith("s")) { wiad += "4 weeks"; }
-            else if (nav.EndsWith("m")) { wiad += "6 months"; }
-            else if (nav.EndsWith("l")) { wiad += "all time"; }
+            string time = "short_term";
 
-            stan.Text = wiad;
+            if (nav.EndsWith("s")) { time = "short_term"; }
+            else if (nav.EndsWith("m")) { time = "medium_term"; }
+            else if (nav.EndsWith("l")) { time = "long_term"; }
+
+            if (nav.StartsWith("a")) { showArtists(await Stats.artists(50, time)); }
+            else if (nav.StartsWith("t")) {  } // no tracks yet
+            else { await Stats.artists(50, time); }
+        }
+
+        private void showArtists(List<(string name, ImageSource image)> list)
+        {
+            foreach (var item in list)
+            {
+                stan.Text += item.name;
+                stan.Text += " ";
+            }
         }
     }
 }
