@@ -33,23 +33,27 @@ namespace Statify
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
             token = (string)e.Parameter;
         }
 
         private async void navview_Loaded(object sender, RoutedEventArgs e)
         {
+            if (navview.SelectedItem == null) { navview.SelectedItem = navview.MenuItems.FirstOrDefault(); }
             pfp.ProfilePicture = await Images.GetProfilePic();
+            mainFrame.Navigate(typeof(StatsPage), "a");
         }
 
         private void navview_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-
+            if (args.InvokedItem != null)
+            {
+                mainFrame.Navigate(typeof(StatsPage), args.InvokedItemContainer.Tag.ToString());
+            }
         }
 
-        private async void Logout(object sender, RoutedEventArgs e)
-        {
-            Auth.ClearCredentials();
-        }
+        //private async void Logout(object sender, RoutedEventArgs e)
+        //{
+        //    Auth.ClearCredentials();
+        //}
     }
 }

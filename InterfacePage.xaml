@@ -16,19 +16,18 @@
             ItemInvoked="navview_ItemInvoked"
             PaneDisplayMode="Top" IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Artists" Icon="People"/>
-                <NavigationViewItem Content="Tracks" Icon="MusicInfo"/>
+                <NavigationViewItem Content="Artists" Icon="People" Tag="a"/>
+                <NavigationViewItem Content="Tracks" Icon="MusicInfo" Tag="t"/>
             </NavigationView.MenuItems>
             <NavigationView.PaneFooter>
                 <Button Margin="0,0,10,0" Background="Transparent" BorderThickness="0">
                     <PersonPicture x:Name="pfp" Initials="U" Width="36" BorderThickness="0"/>
-                    <Button.Flyout>
-                        <MenuFlyout>
-                            <MenuFlyoutItem Text="Log out" Click="Logout" Name="logout" Icon="Delete"/>
-                        </MenuFlyout>
-                    </Button.Flyout>
+                    <Button.Flyout><MenuFlyout><MenuFlyoutItem Text="No logging out for you!" Name="logout"/></MenuFlyout></Button.Flyout> <!-- it does nawt work (and irdc if it ever will tbh) -->
                 </Button>
             </NavigationView.PaneFooter>
+            <Frame x:Name="mainFrame">
+                
+            </Frame>
         </NavigationView>
     </Grid>
 </Page>
