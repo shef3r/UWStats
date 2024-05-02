@@ -48,10 +48,13 @@ namespace Statify
             }
         }
 
-        private void logOut_Click(object sender, RoutedEventArgs e)
-        {
-            Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] = null;
-            this.Frame.Navigate(typeof(MainPage));
-        }
+        //private async void logOut_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] = null;
+        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["refreshToken"] = null;
+        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["verifier"] = null;
+        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["challenge"] = null;
+        //    await CoreApplication.RequestRestartAsync("silly");
+        //} i aint doing this 🤣
     }
 }

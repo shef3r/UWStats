@@ -6,12 +6,14 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 using SpotifyAPI;
 using SpotifyAPI.Web;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using Windows.UI.Xaml;
+using Newtonsoft.Json;
 
 namespace StatifyUWPLib
 {

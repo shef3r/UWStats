@@ -48,6 +48,7 @@ namespace Statify
                 EntryList.Children.Add(new ArtistControl() { Artist = item.Name, Cover = item.Image, Position = i.ToString() });
                 i++;
             }
+            ring.Visibility = Visibility.Collapsed;
         }
 
         private void showTracks(List<Track> list)
@@ -58,6 +59,7 @@ namespace Statify
                 EntryList.Children.Add(new TrackControl() { Title = item.Name, Artist = item.Artist, Album = item.Artist, Cover = item.Cover, Position = i.ToString() });
                 i++;
             }
+            ring.Visibility = Visibility.Collapsed;
         }
 
     }

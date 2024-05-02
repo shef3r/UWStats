@@ -11,6 +11,7 @@
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
     <Grid>
+        <muxc:ProgressRing IsActive="True" Width="80" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="ring"/>
         <ScrollViewer>
             <StackPanel Margin="5" x:Name="EntryList" Orientation="Vertical"/>
         </ScrollViewer>
