@@ -25,7 +25,7 @@
             </NavigationView.PaneCustomContent>
             <NavigationView.PaneFooter>
                 <StackPanel Orientation="Horizontal" Margin="0,0,150,0">
-                    <AppBarButton Width="40" Margin="0,0,10,0" BorderThickness="0">
+                    <AppBarButton Width="40" Margin="0,0,10,0" BorderThickness="0" x:Name="logOut" Click="logOut_Click">
                         <AppBarButton.Icon>
                             <FontIcon Glyph="&#xF3B1;" />
                         </AppBarButton.Icon>

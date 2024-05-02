@@ -48,9 +48,10 @@ namespace Statify
             }
         }
 
-        //private async void Logout(object sender, RoutedEventArgs e)
-        //{
-        //    Auth.ClearCredentials();
-        //}
+        private void logOut_Click(object sender, RoutedEventArgs e)
+        {
+            Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] = null;
+            this.Frame.Navigate(typeof(MainPage));
+        }
     }
 }
