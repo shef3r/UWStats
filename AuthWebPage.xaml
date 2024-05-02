@@ -9,6 +9,6 @@
     mc:Ignorable="d" Background="Transparent">
 
     <Grid>
-        <muxc:WebView2 x:Name="authView" NavigationStarting="authView_NavigationStarting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <muxc:WebView2 Margin="0,60,0,0" x:Name="authView" NavigationStarting="authView_NavigationStarting" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </Page>

@@ -11,19 +11,27 @@
 
     <Grid>
         <NavigationView
+            Margin="0,-1,0,0"
             x:Name="navview"
             Loaded="navview_Loaded"
             ItemInvoked="navview_ItemInvoked"
             PaneDisplayMode="Top" IsBackEnabled="False" IsBackButtonVisible="Collapsed" IsSettingsVisible="False">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Artists" Icon="People" Tag="a"/>
-                <NavigationViewItem Content="Tracks" Icon="MusicInfo" Tag="t"/>
+                <NavigationViewItem Content="Artists" Icon="People" Tag="a" Canvas.ZIndex="10"/>
+                <NavigationViewItem Content="Tracks" Icon="MusicInfo" Tag="t" Canvas.ZIndex="10"/>
             </NavigationView.MenuItems>
+            <NavigationView.PaneCustomContent>
+                <Grid Background="Transparent" Canvas.ZIndex="100" Height="60" VerticalAlignment="Top" HorizontalAlignment="Stretch" x:Name="ttb"/>
+            </NavigationView.PaneCustomContent>
             <NavigationView.PaneFooter>
-                <Button Margin="0,0,10,0" Background="Transparent" BorderThickness="0">
-                    <PersonPicture x:Name="pfp" Initials="U" Width="36" BorderThickness="0"/>
-                    <Button.Flyout><MenuFlyout><MenuFlyoutItem Text="No logging out for you!" Name="logout"/></MenuFlyout></Button.Flyout> <!-- it does nawt work (and irdc if it ever will tbh) -->
-                </Button>
+                <StackPanel Orientation="Horizontal" Margin="0,0,150,0">
+                    <AppBarButton Width="40" Margin="0,0,10,0" BorderThickness="0">
+                        <AppBarButton.Icon>
+                            <FontIcon Glyph="&#xF3B1;" />
+                        </AppBarButton.Icon>
+                    </AppBarButton>
+                    <PersonPicture x:Name="pfp" Initials="U" Width="30" BorderThickness="0"/>
+                </StackPanel>
             </NavigationView.PaneFooter>
             <Frame x:Name="mainFrame">
                 

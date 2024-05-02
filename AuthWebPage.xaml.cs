@@ -36,9 +36,6 @@ namespace Statify
             if (args.Uri.StartsWith("http://localhost:5543/callback"))
             {
                 string code = args.Uri.Split("?code=")[1];
-                DataPackage pkg = new DataPackage();
-                pkg.SetText(code);
-                Clipboard.SetContent(pkg);
                 await Auth.GetCallback(code);
                 if (Auth.isAuthorized)
                 {

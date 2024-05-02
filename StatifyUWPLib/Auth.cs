@@ -41,11 +41,7 @@ namespace StatifyUWPLib
 
         public static async Task GetCallback(string code)
         {
-            DataPackage pkg = new DataPackage();
-            pkg.SetText(code);
-            Clipboard.SetContent(pkg);
             (string verifier, string challenge) = VerifierAndChallenge;
-            pkg.SetText("COPIED:" + verifier);
             var initialResponse = await new OAuthClient().RequestToken(
               new PKCETokenRequest(Auth.clientID, code, new Uri("http://localhost:5543/callback"), verifier)
             );

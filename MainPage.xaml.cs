@@ -34,9 +34,6 @@ namespace Statify
             else
             {
                 (string verifier, string challenge) = Auth.VerifierAndChallenge;
-                DataPackage pkg = new DataPackage();
-                pkg.SetText(verifier);
-                Clipboard.SetContent(pkg);
                 var loginRequest = new LoginRequest(
                   new Uri("http://localhost:5543/callback"),
                   Auth.clientID,

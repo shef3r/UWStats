@@ -55,6 +55,28 @@ namespace Statify
                     //TODO: Load state from previously suspended application
                 }
 
+                //----< Transparent Title >----
+
+                //using Windows.UI.ViewManagement;
+
+                //window as default-size
+
+                Windows.UI.ViewManagement.ApplicationViewTitleBar uwpTitleBar = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().TitleBar;
+
+                uwpTitleBar.ButtonBackgroundColor = Windows.UI.Colors.Transparent;
+
+                uwpTitleBar.BackgroundColor = Windows.UI.Colors.Transparent;
+
+
+
+                //using Windows.ApplicationModel.Core
+
+                Windows.ApplicationModel.Core.CoreApplicationViewTitleBar coreTitleBar = Windows.ApplicationModel.Core.CoreApplication.GetCurrentView().TitleBar;
+
+                coreTitleBar.ExtendViewIntoTitleBar = true;
+
+                //----</ Transparent Title >----
+
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
             }

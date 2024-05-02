@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using StatifyUWPLib;
+using Windows.ApplicationModel.Core;
 
 namespace Statify
 {
@@ -23,6 +24,7 @@ namespace Statify
         public InterfacePage()
         {
             this.InitializeComponent();
+            Window.Current.SetTitleBar(ttb);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
