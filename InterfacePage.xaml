@@ -25,11 +25,11 @@
             </NavigationView.PaneCustomContent>
             <NavigationView.PaneFooter>
                 <StackPanel Orientation="Horizontal" Margin="0,0,150,0">
-                    <!--<AppBarButton Width="40" Margin="0,0,10,0" BorderThickness="0" x:Name="logOut" Click="logOut_Click" ToolTipService.ToolTip="Log out">
+                    <AppBarButton Width="40" Margin="0,0,10,0" BorderThickness="0" x:Name="logOut" Click="logOut_Click" ToolTipService.ToolTip="Log out">
                         <AppBarButton.Icon>
-                            <FontIcon Glyph="&#xF3B1;" />
+                            <FontIcon Glyph="&#xF3B1;"/>
                         </AppBarButton.Icon>
-                    </AppBarButton> nah-->
+                    </AppBarButton>
                     <PersonPicture x:Name="pfp" Initials="U" Width="30" BorderThickness="0"/>
                 </StackPanel>
             </NavigationView.PaneFooter>

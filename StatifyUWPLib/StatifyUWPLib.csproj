@@ -124,6 +124,7 @@
     <Compile Include="Auth.cs" />
     <Compile Include="Images.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsProvider.cs" />
     <Compile Include="Stats.cs" />
     <Compile Include="Track.cs" />
     <EmbeddedResource Include="Properties\StatifyUWPLib.rd.xml" />

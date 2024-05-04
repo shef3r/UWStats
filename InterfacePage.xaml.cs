@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Navigation;
 using StatifyUWPLib;
 using Windows.ApplicationModel.Core;
 
+using static StatifyUWPLib.SettingsProvider;
+
 namespace Statify
 {
     public sealed partial class InterfacePage : Page
@@ -48,13 +50,19 @@ namespace Statify
             }
         }
 
-        //private async void logOut_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] = null;
-        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["refreshToken"] = null;
-        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["verifier"] = null;
-        //    Windows.Storage.ApplicationData.Current.LocalSettings.Values["challenge"] = null;
-        //    await CoreApplication.RequestRestartAsync("silly");
-        //} i aint doing this 🤣
+        private async void logOut_Click(object sender, RoutedEventArgs e)
+        {
+            // Just incase:tm:
+            AccessToken = null;
+            RefreshToken = null;
+            PKCEVerifier = null;
+            VerifierChallenge = null;
+
+            RemoveSetting("accessToken");
+            RemoveSetting("refreshToken");
+            RemoveSetting("verifier");
+            RemoveSetting("challenge");
+            await CoreApplication.RequestRestartAsync("Log out requested.");
+        }
     }
 }

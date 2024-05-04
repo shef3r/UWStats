@@ -15,6 +15,8 @@ using Windows.Storage;
 using Windows.UI.Xaml;
 using Newtonsoft.Json;
 
+using static StatifyUWPLib.SettingsProvider;
+
 namespace StatifyUWPLib
 {
     public class Auth
@@ -24,20 +26,7 @@ namespace StatifyUWPLib
         {
             get
             {
-                if (Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] != null) { return true; }
-                return false;
-            }
-        }
-
-        public static string AccessToken
-        {
-            get
-            {
-                if (Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] != null) { return Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"].ToString(); }
-                else
-                {
-                    throw new Exception("Token unavialable. Authenticate first.");
-                }
+                return AccessToken != string.Empty;
             }
         }
 
@@ -48,34 +37,29 @@ namespace StatifyUWPLib
               new PKCETokenRequest(Auth.clientID, code, new Uri("http://localhost:5543/callback"), verifier)
             );
 
-            Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] = initialResponse.AccessToken;
-            Windows.Storage.ApplicationData.Current.LocalSettings.Values["refreshToken"] = initialResponse.RefreshToken;
+            AccessToken = initialResponse.AccessToken;
+            SettingsProvider.RefreshToken = initialResponse.RefreshToken;
         }
 
         public static async Task RefreshToken()
         {
             var newResponse = await new OAuthClient().RequestToken(
-              new PKCETokenRefreshRequest(clientID, Windows.Storage.ApplicationData.Current.LocalSettings.Values["refreshToken"].ToString())
+              new PKCETokenRefreshRequest(clientID, SettingsProvider.RefreshToken)
             );
-            Windows.Storage.ApplicationData.Current.LocalSettings.Values["accessToken"] = newResponse.AccessToken;
-            Windows.Storage.ApplicationData.Current.LocalSettings.Values["refreshToken"] = newResponse.RefreshToken;
+            AccessToken = newResponse.AccessToken;
+            SettingsProvider.RefreshToken = newResponse.RefreshToken;
         }
 
         public static (string, string) VerifierAndChallenge
         {
             get
             {
-                if (Windows.Storage.ApplicationData.Current.LocalSettings.Values["verifier"] != null && Windows.Storage.ApplicationData.Current.LocalSettings.Values["challenge"] != null)
-                {
-                    return (Windows.Storage.ApplicationData.Current.LocalSettings.Values["verifier"].ToString(), Windows.Storage.ApplicationData.Current.LocalSettings.Values["challenge"].ToString());
-                }
-                else
-                {
-                    (string verifier, string challenge) = PKCEUtil.GenerateCodes();
-                    Windows.Storage.ApplicationData.Current.LocalSettings.Values["verifier"] = verifier;
-                    Windows.Storage.ApplicationData.Current.LocalSettings.Values["challenge"] = challenge;
-                    return (verifier, challenge);
-                }
+                if(PKCEVerifier != string.Empty && VerifierChallenge != string.Empty) return (PKCEVerifier, VerifierChallenge);
+
+                (string verifier, string challenge) = PKCEUtil.GenerateCodes();
+                PKCEVerifier = verifier;
+                VerifierChallenge = challenge;
+                return (verifier, challenge);
             }
         }
     }

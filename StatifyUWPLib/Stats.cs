@@ -9,6 +9,8 @@ using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml.Media;
 
+using static StatifyUWPLib.SettingsProvider;
+
 namespace StatifyUWPLib
 {
     public class Stats
@@ -17,7 +19,7 @@ namespace StatifyUWPLib
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/me/top/artists?time_range={range}&limit={limit}&offset=0");
-            request.Headers.Add("Authorization", $"Bearer {Auth.AccessToken}");
+            request.Headers.Add("Authorization", $"Bearer {AccessToken}");
             var response = await client.SendAsync(request);
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             { await Auth.RefreshToken(); await CoreApplication.RequestRestartAsync("silly"); }
@@ -49,15 +51,13 @@ namespace StatifyUWPLib
                 return list;
             }
             return null;
-
-
         }
 
         public async static Task<List<Track>> tracks(int limit, string range)
         {
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/me/top/tracks?time_range={range}&limit={limit}&offset=0");
-            request.Headers.Add("Authorization", $"Bearer {Auth.AccessToken}");
+            request.Headers.Add("Authorization", $"Bearer {AccessToken}");
             var response = await client.SendAsync(request);
             if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
             { await Auth.RefreshToken(); await CoreApplication.RequestRestartAsync("silly"); }
@@ -93,8 +93,6 @@ namespace StatifyUWPLib
                 return list;
             }
             return null;
-
-
         }
     }
 }
