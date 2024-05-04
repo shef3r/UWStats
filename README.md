@@ -2,6 +2,9 @@
 <h1 align=center>Statify</h1>
 <p align=center>Here's your Spotify companion on Windows! Check all your stats easily and quickly.</p>
 
+## IMPORTANT
+This app is a hobby project, so it can't the accepted by Spotify. Use your own client ID or DM me on Discord @shef3r so that I can add you to authorized users (so that you can use the pre-built app). 
+
 ### Installation
 #### Prebuilt
 - Go to the Releases tab and download both the `.msixbundle` nad `.cer` files.
