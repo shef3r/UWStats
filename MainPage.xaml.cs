@@ -16,6 +16,8 @@ using StatifyUWPLib;
 using SpotifyAPI.Web;
 using Windows.ApplicationModel.DataTransfer;
 
+using static StatifyUWPLib.SettingsProvider;
+
 namespace Statify
 {
     public sealed partial class MainPage : Page
@@ -29,7 +31,7 @@ namespace Statify
         {
             if (Auth.isAuthorized)
             {
-                this.Frame.Navigate(typeof(InterfacePage), Auth.AccessToken);
+                this.Frame.Navigate(typeof(InterfacePage), AccessToken);
             }
             else
             {

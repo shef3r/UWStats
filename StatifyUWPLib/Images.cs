@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage;
 using System.Runtime.InteropServices.WindowsRuntime;
 
+using static StatifyUWPLib.SettingsProvider;
+
 namespace StatifyUWPLib
 {
     public class Images
@@ -35,7 +37,7 @@ namespace StatifyUWPLib
             {
                 var client = new HttpClient();
                 var request = new HttpRequestMessage(HttpMethod.Get, "https://api.spotify.com/v1/me");
-                request.Headers.Add("Authorization", $"Bearer {Auth.AccessToken}");
+                request.Headers.Add("Authorization", $"Bearer {AccessToken}");
                 var response = await client.SendAsync(request);
                 response.EnsureSuccessStatusCode();
                 string resp = await response.Content.ReadAsStringAsync();

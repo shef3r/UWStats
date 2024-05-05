@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using static StatifyUWPLib.SettingsProvider;
+
 namespace Statify
 {
     public sealed partial class AuthWebPage : Page
@@ -39,7 +41,7 @@ namespace Statify
                 await Auth.GetCallback(code);
                 if (Auth.isAuthorized)
                 {
-                    this.Frame.Navigate(typeof(InterfacePage), Auth.AccessToken);
+                    this.Frame.Navigate(typeof(InterfacePage), AccessToken);
                 }
                 else
                 {
