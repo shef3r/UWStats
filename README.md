@@ -1,9 +1,25 @@
-<p align=center><img src="https://github.com/shef3r/StatifyUWP/blob/master/Assets/Square44x44Logo.targetsize-256.png?raw=true"></p>
-<h1 align=center>Statify</h1>
+<p align=center><img width=150 src="https://github.com/shef3r/StatifyUWP/blob/master/Assets/Square44x44Logo.targetsize-256.png?raw=true"></p>
+<h2 align=center>Statify</h2>
 <p align=center>Here's your Spotify companion on Windows! Check all your stats easily and quickly.</p>
 
-## IMPORTANT
-This app is a hobby project, so it can't the accepted by Spotify. Use your own client ID or DM me on Discord @shef3r so that I can add you to authorized users (so that you can use the pre-built app). 
+### Usage
+#### Preparation
+To use the app, you need to get a client ID. To do that,
+- Go to [this website](https://developer.spotify.com/dashboard)
+- Create an app:
+    - Click the "create" button
+    - Type whatever you want into the first 3 fields
+    - In the "Redirect URIs" field, paste in "http://localhost:5543/callback"
+    - Check "Web API" at the bottom
+    - Agree to the terms
+    - Click Save
+- Click the "Settings" button at the top right of the page
+- Save the "Client ID" value somewhere
+#### Setup
+- Launch the app
+- Paste in your Client ID in the field
+- Log in to Spotify **with the same account you used to create the app previously**
+
 
 ### Installation
 #### Prebuilt
