@@ -27,7 +27,7 @@ namespace Statify
             this.InitializeComponent();
         }
 
-        private void Page_Loaded(object sender, RoutedEventArgs e)
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             if (Auth.isAuthorized)
             {
@@ -35,10 +35,13 @@ namespace Statify
             }
             else
             {
+                await ContentDialog1.ShowAsync();
+                DataPackage pkg = new DataPackage();
+                SettingsProvider.ClientID = ContentDialog1.Tag.ToString();
                 (string verifier, string challenge) = Auth.VerifierAndChallenge;
                 var loginRequest = new LoginRequest(
                   new Uri("http://localhost:5543/callback"),
-                  Auth.clientID,
+                  SettingsProvider.ClientID,
                   LoginRequest.ResponseType.Code
                 )
                 {

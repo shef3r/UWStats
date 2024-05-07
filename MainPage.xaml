@@ -10,6 +10,13 @@
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True" Loaded="Page_Loaded">
 
     <Grid>
-        <TextBlock>You shouldn't be here. If you're stuck, report a problem to the developer.</TextBlock>
+        <ContentDialog x:Name="ContentDialog1"
+               PrimaryButtonText="OK"
+               Title="Enter your client ID">
+
+            <Grid>
+                <TextBox PlaceholderText="ID" Text="{Binding ElementName=ContentDialog1, Path=Tag, Mode=TwoWay}" />
+            </Grid>
+        </ContentDialog>
     </Grid>
 </Page>

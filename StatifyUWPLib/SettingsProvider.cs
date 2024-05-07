@@ -52,6 +52,12 @@ namespace StatifyUWPLib
             set => SetSetting("verifier", value);
         }
 
+        public static string ClientID
+        {
+            get => GetSetting<string>("clientID") ?? string.Empty;
+            set => SetSetting("clientID", value);
+        }
+
         public static string VerifierChallenge
         {
             get => GetSetting<string>("challenge") ?? string.Empty;

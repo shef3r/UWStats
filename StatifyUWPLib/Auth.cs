@@ -21,7 +21,6 @@ namespace StatifyUWPLib
 {
     public class Auth
     {
-        public static string clientID = "9eb749f187ca40bf911905d6c8b9f0b5";
         public static bool isAuthorized
         {
             get
@@ -34,7 +33,7 @@ namespace StatifyUWPLib
         {
             (string verifier, string challenge) = VerifierAndChallenge;
             var initialResponse = await new OAuthClient().RequestToken(
-              new PKCETokenRequest(Auth.clientID, code, new Uri("http://localhost:5543/callback"), verifier)
+              new PKCETokenRequest(SettingsProvider.ClientID, code, new Uri("http://localhost:5543/callback"), verifier)
             );
 
             AccessToken = initialResponse.AccessToken;
@@ -44,7 +43,7 @@ namespace StatifyUWPLib
         public static async Task RefreshToken()
         {
             var newResponse = await new OAuthClient().RequestToken(
-              new PKCETokenRefreshRequest(clientID, SettingsProvider.RefreshToken)
+              new PKCETokenRefreshRequest(SettingsProvider.ClientID, SettingsProvider.RefreshToken)
             );
             AccessToken = newResponse.AccessToken;
             SettingsProvider.RefreshToken = newResponse.RefreshToken;
