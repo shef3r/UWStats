@@ -38,7 +38,7 @@ namespace StatifyUWPLib
                 {
                     string name = item.GetProperty("name").GetString();
                     JsonElement imagesArray = item.GetProperty("images");
-                    string imageUrl = imagesArray[1].GetProperty("url").GetString();
+                    string imageUrl = imagesArray[2].GetProperty("url").GetString();
 
                     list.Add(
                         new Artist()
@@ -79,7 +79,7 @@ namespace StatifyUWPLib
                     JsonElement imagesArray = albumArray.GetProperty("images");
 
                     string artist = artistsArray[0].GetProperty("name").GetString();
-                    string imageUrl = imagesArray[1].GetProperty("url").GetString();
+                    string imageUrl = imagesArray[2].GetProperty("url").GetString();
                     string album = albumArray.GetProperty("name").GetString();
                     string name = item.GetProperty("name").GetString();
 
