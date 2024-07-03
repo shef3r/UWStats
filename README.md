@@ -1,8 +1,7 @@
 <p align=center><img width=150 src="https://github.com/shef3r/StatifyUWP/blob/master/Assets/Square44x44Logo.targetsize-256.png?raw=true"></p>
-<h2 align=center>Statify</h2>
+<h2 align=center>UWStats</h2>
 <p align=center>Here's your Spotify companion on Windows! Check all your stats easily and quickly.</p>
 
-// rebrand soon
 ### Usage
 #### Preparation
 To use the app, you need to get a client ID. To do that,
