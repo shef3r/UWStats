@@ -2,6 +2,7 @@
 <h2 align=center>Statify</h2>
 <p align=center>Here's your Spotify companion on Windows! Check all your stats easily and quickly.</p>
 
+// rebrand soon
 ### Usage
 #### Preparation
 To use the app, you need to get a client ID. To do that,
