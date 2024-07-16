@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media;
 
-namespace StatifyUWPLib
+namespace UWStatsUWPLib
 {
     public class Artist
     {

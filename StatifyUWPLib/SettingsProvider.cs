@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace StatifyUWPLib
+namespace UWStatsUWPLib
 {
     public static class SettingsProvider
     {

@@ -9,9 +9,9 @@ using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml.Media;
 
-using static StatifyUWPLib.SettingsProvider;
+using static UWStatsUWPLib.SettingsProvider;
 
-namespace StatifyUWPLib
+namespace UWStatsUWPLib
 {
     public class Stats
     {

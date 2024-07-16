@@ -14,7 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Statify
+namespace UWStats
 {
     public sealed partial class StatsPage : Page
     {

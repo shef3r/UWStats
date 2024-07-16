@@ -244,9 +244,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="StatifyUWPLib\StatifyUWPLib.csproj">
+    <ProjectReference Include="StatifyUWPLib\UWStatsLib.csproj">
       <Project>{2a2f50fe-4460-48af-a5dd-2e144a727415}</Project>
-      <Name>StatifyUWPLib</Name>
+      <Name>UWStatsLib</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

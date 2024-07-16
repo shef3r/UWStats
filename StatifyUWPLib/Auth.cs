@@ -15,9 +15,9 @@ using Windows.Storage;
 using Windows.UI.Xaml;
 using Newtonsoft.Json;
 
-using static StatifyUWPLib.SettingsProvider;
+using static UWStatsUWPLib.SettingsProvider;
 
-namespace StatifyUWPLib
+namespace UWStatsUWPLib
 {
     public class Auth
     {

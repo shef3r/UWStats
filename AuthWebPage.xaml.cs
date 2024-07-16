@@ -1,4 +1,4 @@
-﻿using StatifyUWPLib;
+﻿using UWStatsUWPLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,9 +15,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-using static StatifyUWPLib.SettingsProvider;
+using static UWStatsUWPLib.SettingsProvider;
 
-namespace Statify
+namespace UWStats
 {
     public sealed partial class AuthWebPage : Page
     {

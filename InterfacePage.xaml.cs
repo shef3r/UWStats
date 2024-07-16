@@ -13,12 +13,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using StatifyUWPLib;
+using UWStatsUWPLib;
 using Windows.ApplicationModel.Core;
 
-using static StatifyUWPLib.SettingsProvider;
+using static UWStatsUWPLib.SettingsProvider;
 
-namespace Statify
+namespace UWStats
 {
     public sealed partial class InterfacePage : Page
     {

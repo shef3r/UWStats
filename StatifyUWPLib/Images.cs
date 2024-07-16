@@ -15,9 +15,9 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage;
 using System.Runtime.InteropServices.WindowsRuntime;
 
-using static StatifyUWPLib.SettingsProvider;
+using static UWStatsUWPLib.SettingsProvider;
 
-namespace StatifyUWPLib
+namespace UWStatsUWPLib
 {
     public class Images
     {

@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using StatifyUWPLib;
+using UWStatsUWPLib;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace Statify
+namespace UWStats
 {
     public sealed partial class EntryPage : Page
     {
