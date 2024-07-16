@@ -16,7 +16,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="pos" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="SemiBold"/>
-        <Grid VerticalAlignment="Center" Height="50" CornerRadius="4" Grid.Column="1">
+        <Grid VerticalAlignment="Center" Height="50" Grid.Column="1">
             <Image x:Name="img"/>
         </Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Column="2" Margin="15,5,5,5">
