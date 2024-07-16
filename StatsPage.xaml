@@ -10,6 +10,9 @@
     muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
     <Grid>
+        <StackPanel Orientation="Horizontal" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top" Opacity=".7" Margin="0,10,30,0">
+            <Image Source="Assets/Spotify_Logo_RGB_White.png" VerticalAlignment="Bottom"/>
+        </StackPanel>
         <NavigationView
             x:Name="timeview"
             Loaded="timeview_Loaded"

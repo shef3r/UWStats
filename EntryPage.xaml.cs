@@ -56,7 +56,7 @@ namespace UWStats
             int i = 1;
             foreach (Track item in list)
             {
-                EntryList.Children.Add(new TrackControl() { Title = item.Name, Artist = item.Artist, Album = item.Artist, Cover = item.Cover, Position = i.ToString() });
+                EntryList.Children.Add(new TrackControl() { Title = item.Name, Artist = item.Artist, Album = item.Album, Cover = item.Cover, Position = i.ToString() });
                 i++;
             }
             ring.Visibility = Visibility.Collapsed;
